@@ -1,3 +1,4 @@
+import ffpicker.config as config
 from ffpicker.data import fetch
 
 import argparse, logging
@@ -11,6 +12,9 @@ def parse_args():
 def main():
     args = parse_args();
     logging.basicConfig(level=args.log_level.upper())
+
+    configuration = config.Config()
+    print(configuration.get_property("SCHEDULE_URL"))
 
     schedule = fetch.schedule(2017, 3)
 

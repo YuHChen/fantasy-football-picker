@@ -2,6 +2,9 @@
 ffpicker-raw-data/
 ffpicker-data/
 
+# Emacs
+*~
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
