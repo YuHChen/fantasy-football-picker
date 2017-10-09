@@ -2,16 +2,19 @@ TEST_DIRS = \
 	test.config \
 	test.data.fetch
 
-.PHONY: all run tests
+.PHONY: all run unittests
 
-all:	tests run
+all:	unittests run
 
 run:
 	@echo -n "[run]: "
 	python3 main.py --log=debug
 	@echo ""
 
-tests:
-	@echo -n "[tests]: "
-	$(foreach dir, $(TEST_DIRS), python3 -m unittest discover $(dir);)
+unittests:	$(TEST_DIRS)
+	@echo "Unit tests: SUCCESS"
+
+test%:
+	@echo -n "[unittest]: "
+	python3 -m unittest discover $@
 	@echo ""
