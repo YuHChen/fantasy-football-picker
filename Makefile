@@ -1,6 +1,7 @@
 TEST_DIRS = \
 	test.config \
-	test.data.fetch
+	test.data.fetch \
+	test.data.transform
 
 .PHONY: all run unittests
 

@@ -20,7 +20,7 @@ class Config(object):
             'SCHEDULE_XML_TIME' : 't',
             'SCHEDULE_XML_VISITOR' : 'v',
             'SCHEDULE_XML_VISITOR_NAME' : 'vnn',
-            'SCHEUDLE_XML_VISITOR_SCORE' : 'vs',
+            'SCHEDULE_XML_VISITOR_SCORE' : 'vs',
             'SCHEDULE_XML_WEEK' : 'w',
             'SCHEDULE_XML_YEAR' : 'y'
         },

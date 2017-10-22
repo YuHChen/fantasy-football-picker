@@ -1,7 +1,7 @@
 import ffpicker.config as config
-from ffpicker.data import fetch
+from ffpicker.data import fetch, transform
 
-import argparse, logging
+import argparse, json, logging
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Pick fantasy football winning team.')
@@ -17,6 +17,8 @@ def main():
     print(configuration.get_property("SCHEDULE_URL"))
 
     schedule = fetch.schedule(2017, 3)
+    transform.schedule_xml_to_json(schedule)
+    print(json.dumps(schedule.data, indent=2, sort_keys=True))
 
     fetch.game()
 
