@@ -2,9 +2,7 @@ from ffpicker.config import ScheduleConfig
 from ffpicker.data.models import Schedule
 from ffpicker.data.models import Season as stypes
 
-import os
-import logging
-import urllib.request
+import logging, os, urllib.request
 
 _config = ScheduleConfig()
 

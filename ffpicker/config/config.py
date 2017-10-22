@@ -8,6 +8,21 @@ class Config(object):
             'SCHEDULE_RAW_DATA_DIR' : 'ffpicker-raw-data/schedules',
             'SCHEDULE_URL' : ('http://www.nfl.com/ajax/scorestrip?'
                               'season={}&seasonType={}&week={}'),
+            # schedule XML
+            'SCHEDULE_XML_DAY' : 'd',
+            'SCHEDULE_XML_EVENT_ID' : 'eid',
+            'SCHEDULE_XML_GAME' : 'g',
+            'SCHEDULE_XML_GAMES' : 'gms',
+            'SCHEDULE_XML_HOME' : 'h',
+            'SCHEDULE_XML_HOME_NAME' : 'hnn',
+            'SCHEDULE_XML_HOME_SCORE' : 'hs',
+            'SCHEDULE_XML_SEASON_TYPE' : 'gt',
+            'SCHEDULE_XML_TIME' : 't',
+            'SCHEDULE_XML_VISITOR' : 'v',
+            'SCHEDULE_XML_VISITOR_NAME' : 'vnn',
+            'SCHEUDLE_XML_VISITOR_SCORE' : 'vs',
+            'SCHEDULE_XML_WEEK' : 'w',
+            'SCHEDULE_XML_YEAR' : 'y'
         },
         '_CONFIG_FILENAME' : 'config.json'
     }
