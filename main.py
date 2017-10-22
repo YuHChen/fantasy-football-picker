@@ -17,8 +17,7 @@ def main():
     print(configuration.get_property("SCHEDULE_URL"))
 
     schedule = fetch.schedule(2017, 3)
-    transform.schedule_xml_to_json(schedule)
-    print(json.dumps(schedule.data, indent=2, sort_keys=True))
+    print(schedule)
 
     fetch.game()
 

@@ -39,6 +39,5 @@ def schedule_xml_to_json(schedule):
         err_msg = ('Expected schedule data for {} season week {}, '
                    'but found data for {} season week {}.')
         raise RuntimeError(err_msg.format(schedule.season, schedule.week, year, week))
-    schedule_json['games'] = [_game_xml_to_json(game, schedule.stype) for game in games]
-    schedule.data = schedule_json
+    schedule.games = [_game_xml_to_json(game, schedule.stype) for game in games]
     return schedule

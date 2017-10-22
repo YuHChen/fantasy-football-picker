@@ -11,25 +11,25 @@ class TestSched(unittest.TestCase):
     def test_createDefaultFilepath_givenPostSeasonWeek1(self):
         self.schedule.stype = stypes.POST
         expected = 'ffpicker-raw-data/schedules/0_POST_1.txt'
-        actual = sched._create_default_filepath(self.schedule)
+        actual = sched._create_default_filepath(self.schedule, 'ffpicker-raw-data/schedules')
         self.assertEqual(actual, expected)
 
     def test_createDefaultFilepath_givenPreSeasonWeek1(self):
         self.schedule.stype = stypes.PRE
-        expected = 'ffpicker-raw-data/schedules/0_PRE_1.txt'
-        actual = sched._create_default_filepath(self.schedule)
+        expected = 'ffpicker-data/schedules/0_PRE_1.txt'
+        actual = sched._create_default_filepath(self.schedule, 'ffpicker-data/schedules')
         self.assertEqual(actual, expected)
 
     def test_createDefaultFilepath_givenProSeasonWeek1(self):
         self.schedule.stype = stypes.PRO
         expected = 'ffpicker-raw-data/schedules/0_PRO_1.txt'
-        actual = sched._create_default_filepath(self.schedule)
+        actual = sched._create_default_filepath(self.schedule, 'ffpicker-raw-data/schedules')
         self.assertEqual(actual, expected)
 
     def test_createDefaultFilepath_givenRegularSeasonWeek1(self):
         self.schedule.stype = stypes.REGULAR
-        expected = 'ffpicker-raw-data/schedules/0_REG_1.txt'
-        actual = sched._create_default_filepath(self.schedule)
+        expected = 'ffpicker-data/schedules/0_REG_1.txt'
+        actual = sched._create_default_filepath(self.schedule, 'ffpicker-data/schedules')
         self.assertEqual(actual, expected)
 
     def test_createScheduleUrl_givenPostSeasonWeek1_returnsUrlWithWeek18(self):
