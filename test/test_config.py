@@ -1,6 +1,8 @@
 from ffpicker.config import Config
 
-import logging, os, unittest
+import logging
+import os
+import unittest
 
 class TestConfig(unittest.TestCase):
     def setUp(self):

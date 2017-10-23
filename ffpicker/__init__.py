@@ -1,1 +1,4 @@
-from ffpicker.data import fetch
+__all__ = [
+    "config",
+    "data"
+]

@@ -1,9 +1,18 @@
-from ffpicker.data.models import Season as stypes
+__all__ = [
+    "Schedule",
+    "Season"
+]
 
-class Schedule:
+class Season(object):
+    POST = 'POST'
+    PRE = 'PRE'
+    PRO = 'PRO'
+    REGULAR = 'REG'
+
+class Schedule(object):
     """Data model of a season's week's schedule"""
 
-    def __init__(self, season, week, stype=stypes.REGULAR, data=None, games=None):
+    def __init__(self, season, week, stype=Season.REGULAR, data=None, games=None):
         self.season = season
         self.week = week
         self.stype = stype

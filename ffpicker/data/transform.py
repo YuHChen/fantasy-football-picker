@@ -2,8 +2,13 @@ from ffpicker.config import ScheduleXMLConfig
 from ffpicker.data.models import Schedule
 from ffpicker.data.models import Season as stypes
 
-import logging, os
+import logging
+import os
 import xml.etree.ElementTree as ET
+
+__all__ = [
+    "schedule_xml_to_json"
+]
 
 _config = ScheduleXMLConfig()
 

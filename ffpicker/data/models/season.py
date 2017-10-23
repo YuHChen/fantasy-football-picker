@@ -1,4 +1,0 @@
-POST = 'POST'
-PRE = 'PRE'
-PRO = 'PRO'
-REGULAR = 'REG'

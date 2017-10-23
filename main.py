@@ -1,5 +1,4 @@
-import ffpicker.config as config
-from ffpicker.data import fetch, transform
+import ffpicker.data.fetch as fetch
 
 import argparse, json, logging
 
@@ -13,13 +12,8 @@ def main():
     args = parse_args();
     logging.basicConfig(level=args.log_level.upper())
 
-    configuration = config.Config()
-    print(configuration.get_property("SCHEDULE_URL"))
-
     schedule = fetch.schedule(2017, 3)
     print(schedule)
-
-    fetch.game()
 
 if __name__ == '__main__':
     main()

@@ -1,9 +1,16 @@
 from ffpicker.config import ScheduleConfig
+from ffpicker.data import transform
 from ffpicker.data.models import Schedule
 from ffpicker.data.models import Season as stypes
-import ffpicker.data.transform as transform
 
-import json, logging, os, urllib.request
+import json
+import logging
+import os
+import urllib.request
+
+__all__ = [
+    "schedule"
+]
 
 _config = ScheduleConfig()
 
