@@ -1,4 +1,5 @@
 __all__ = [
     "config",
-    "data"
+    "data",
+    "pick"
 ]

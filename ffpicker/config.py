@@ -3,6 +3,7 @@ import logging
 
 __all__ = [
     "Config",
+    "PickConfig",
     "ScheduleConfig",
     "ScheduleXMLConfig"
 ]
@@ -10,6 +11,13 @@ __all__ = [
 class Config(object):
     _shared_state = {
         '_DEFAULT_CONFIG' : {
+            # pick
+            'PICK_TEAM_BIASES' : [
+                'NYG', 'giants',
+                'NYJ', 'jets',
+                'SEA', 'seahawks'
+            ],
+
             # schedules
             'SCHEDULE_DATA_DIR' : 'ffpicker-data/schedules',
             'SCHEDULE_RAW_DATA_DIR' : 'ffpicker-raw-data/schedules',
@@ -56,6 +64,11 @@ class Config(object):
 
     def get_property(self, property_name):
         return self._config.get(property_name)
+
+class PickConfig(Config):
+    @property
+    def team_biases(self):
+        return self.get_property('PICK_TEAM_BIASES')
 
 class ScheduleConfig(Config):
     @property
