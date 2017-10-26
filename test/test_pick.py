@@ -1,17 +1,22 @@
 from ffpicker import pick
 
+import itertools
 import unittest
 
 class TestPick(unittest.TestCase):
     def setUp(self):
         pass
 
-    def test_winnerBetween_givenOneTeamBias_returnBias(self):
+    def test_between_givenOneTeamBias_returnBias(self):
         expected = 'giants'
-        actual = str(pick.winner_between('giants', 'bears').using(pick.team_bias))
-        self.assertEqual(actual, expected)
+        # test using combinations of team names and team codes
+        for teams in itertools.product(['NYG', 'giants'], ['CHI', 'bears']):
+            actual = pick.between(*teams).using(pick.team_bias).winner.name
+            self.assertEqual(actual, expected)
 
-    def test_winnerBetween_givenBothTeamBiases_returnFirstBias(self):
+    def test_between_givenBothTeamBiases_returnFirstBias(self):
         expected = 'giants'
-        actual = str(pick.winner_between('seahawks', 'giants').using(pick.team_bias))
-        self.assertEqual(actual, expected)
+        # test using combinations of team names and team codes
+        for teams in itertools.product(['NYG', 'giants'], ['SEA', 'seahawks']):
+            actual = pick.between(*teams).using(pick.team_bias).winner.name
+            self.assertEqual(actual, expected)

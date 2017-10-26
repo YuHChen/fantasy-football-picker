@@ -13,9 +13,9 @@ class Config(object):
         '_DEFAULT_CONFIG' : {
             # pick
             'PICK_TEAM_BIASES' : [
-                'NYG', 'giants',
-                'NYJ', 'jets',
-                'SEA', 'seahawks'
+                'giants',
+                'jets',
+                'seahawks'
             ],
 
             # schedules

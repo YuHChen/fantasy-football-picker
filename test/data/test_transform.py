@@ -35,24 +35,15 @@ class TestTransform(unittest.TestCase):
 
     def test_gameXmlToJson_givenRegularSeasonData_raisesRuntimeError(self):
         game_xml = ET.fromstring(self.schedule.data).find('gms').find('g')
-        with self.assertRaises(RuntimeError) as context:
+        with self.assertRaisesRegex(RuntimeError, 'PRE season.*REG season'):
             transform._game_xml_to_json(game_xml, stypes.PRE)
-        exception_msg = str(context.exception)
-        self.assertTrue('PRE season' in exception_msg)
-        self.assertTrue('REG season' in exception_msg)
 
     def test_scheduleXmlToJson_givenSeason2_raisesRuntimeError(self):
         self.schedule.season = 2
-        with self.assertRaises(RuntimeError) as context:
+        with self.assertRaisesRegex(RuntimeError, '2 season.*1 season'):
             transform.schedule_xml_to_json(self.schedule)
-        exception_msg = str(context.exception)
-        self.assertTrue('1 season' in exception_msg)
-        self.assertTrue('2 season' in exception_msg)
 
     def test_scheduleXmlToJson_givenWeek3_raisesRuntimeError(self):
         self.schedule.week = 3
-        with self.assertRaises(RuntimeError) as context:
+        with self.assertRaisesRegex(RuntimeError, 'week 3.*week 2'):
             transform.schedule_xml_to_json(self.schedule)
-        exception_msg = str(context.exception)
-        self.assertTrue('week 2' in exception_msg)
-        self.assertTrue('week 3' in exception_msg)
